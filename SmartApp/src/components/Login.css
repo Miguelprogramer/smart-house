@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: linear-gradient(to bottom, #FF7700, #d1d1d1);
+}
+
+/* Media screen para celular   */
+@media screen and (max-width: 500px) {
+    .logosmart {
+        z-index: 1;
+        position: absolute;
+        top: 20px;
+        left: 26px;
+        width: 300px;
+}
+
+    .LoginContainer{
+        background-color: #001f21;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        border-radius: 35px 35px 0 0;
+        height: 50%;
+        z-index: 99;
+}
+
+    .Banner{
+        top: 0;
+}
+
+    .LoginContainer{
+        padding: 20px;
+    }
+
+    .LoginContainer input{
+        padding: 15px;
+        background-color: #001f21;
+        font-size: 20px;
+        border-radius: 23px;
+        margin: 20px;
+        border: none;
+        border: 1px solid #ffffff;
+        color: #ffffff;
+    }
+
+    .LoginContainer button{
+        font-size: 25px;
+        font-weight: 550;
+        padding: 7px 30px;
+        background-color: #ffffff;
+        color: #001f21;
+        border: none;
+        border-radius: 50px;
+        transition: 0.1s;
+    }
+
+        .LoginContainer button:hover{
+        background-color: #c1c1c1;
+    }
+
+    .LoginContainer a{
+        text-decoration: none;
+        color: #ffffff;
+        font-size: 20px;
+        font-weight: 100;
+        margin-top: 20px;
+        transition: 0.2s;
+    }
+    .LoginContainer a:hover{
+        text-decoration: underline;
+        color: #c1c1c1;
+    }
+}
+
