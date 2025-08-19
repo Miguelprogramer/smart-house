@@ -1,34 +1,48 @@
-import React from "react"
-import './Login.css'
+import React, { useState } from "react";
+import "./Login.css";
+import Cadastro from "./Cadastro";
+
 function Login() {
-    const API_URL = 'http://localhost:3000'
+  const [mostrarCadastro, setMostrarCadastro] = useState(false);
 
-    async function Entrar() {
-
-    }
+  async function Entrar() {
+  }
 
   return (
     <>
-        <div className="mainContainer">
+      <div className="mainContainer"></div>
+      <div className="Banner">
+        <img
+          src="../src/assets/painel.png"
+          alt="SmartHome Logo"
+          className="logosmart"
+        />
+      </div>
 
-            </div>
-            <div className="Banner">
-                <img src="../src/assets/painel.png" alt="SmartHome Logo" className="logosmart"/>
-            </div>
-
-            <div className="LoginContainer">
-                
-                <form className="LoginForm">
-                    <input type="text" placeholder="usuário@email.com" className="usuario"/>
-                    <input type="password" placeholder="Senha..." className="senha"/>
-                    <a href=""><button type="submit">Entrar</button></a>
-                    <br/>
-                    <br/>
-                    <a href="Cadastro.jsx" className="cadastro">Cadastre-se</a>
-                </form>
-            </div>
-        <div/>
-
+      {!mostrarCadastro ? (
+        <div className="LoginContainer">
+          <form className="LoginForm" onSubmit={Entrar}>
+            <input
+              type="text"
+              placeholder="usuário@email.com"
+              className="usuario"
+            />
+            <input type="password" placeholder="Senha..." className="senha" />
+            <button type="submit">Entrar</button>
+            <br />
+            <br />
+            <a
+              type="button"
+              className="cadastro"
+              onClick={() => setMostrarCadastro(true)}
+            >
+              Cadastre-se
+            </a>
+          </form>
+        </div>
+      ) : (
+        <Cadastro />
+      )}
     </>
   );
 }
