@@ -42,6 +42,9 @@ export default function Cadastro() {
             body: JSON.stringify({ nome, fone, email, senha })
         })
     }
+
+    alert("Cadastro realizado com sucesso!");
+    window.location.href = "/login";
   }
 
   return (
@@ -55,7 +58,7 @@ export default function Cadastro() {
         <input type="password" id="senha"  name="senha"  placeholder="Senha..." />
         <input type="password" id="csenha" name="csenha" placeholder="Confirmar Senha..." />
 
-        <button type="submit">Cadastrar</button>
+        <button >Cadastrar</button>
       </form>
     </div>
   );
