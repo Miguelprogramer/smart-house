@@ -1,4 +1,62 @@
-body{
-    margin: 0;
-    padding: 0;
+@media screen and (max-width: 500px) {
+  .dashboard {
+    width: 100%;
+    background-color: #ff7700;
+    padding: 20px;
+    box-sizing: border-box;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .Usuario {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .donoCasa {
+    font-size: 24px;
+    color: white;
+    margin-right: 10px;
+  }
+
+  .fotoUsuario {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+
+  .comodos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .comodo {
+    width: 80px;
+    height: 80px;
+    background-color: #333;
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: white;
+    font-size: 14px;
+  }
+
+  .comodo img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 5px;
+  }
+
+  .adicionar {
+    background-color: #333;
+  }
 }

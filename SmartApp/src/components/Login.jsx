@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // Para redirecionamento
 import "./Login.css";
 import Cadastro from "./Cadastro";
+import painelImg from "../assets/painel.png";
 
 function Login() {
   const [mostrarCadastro, setMostrarCadastro] = useState(false);
-  const navigate = useNavigate(); // Hook para navegação
 
   async function handleLogin(event) {
     event.preventDefault(); // Evita o reload da página
@@ -26,7 +25,7 @@ function Login() {
 
       if (user) {
         // Login bem-sucedido, redireciona para o Dashboard
-        navigate("/Dashboard");
+        window.location.href = "/Dashboard";
       } else {
         alert("Usuário ou senha incorretos!");
       }
@@ -40,11 +39,7 @@ function Login() {
     <section className="fundo">
       <div className="mainContainer"></div>
       <div className="Banner">
-        <img
-          src="../src/assets/painel.png"
-          alt="SmartHome Logo"
-          className="logosmart"
-        />
+        <img src={painelImg} alt="SmartHome Logo" className="logosmart" />
       </div>
 
       {!mostrarCadastro ? (
@@ -60,17 +55,13 @@ function Login() {
               id="senha"
               type="password"
               placeholder="Senha..."
-              className="senha"
-            />
+              className="senha"/>
+
+              
             <button type="submit">Entrar</button>
             <br />
-            <button
-              type="button"
-              className="cadastro"
-              onClick={() => setMostrarCadastro(true)}
-            >
-              Cadastre-se
-            </button>
+            
+            <a type="button" className="cadastro" onClick={() => setMostrarCadastro(true)}>Cadastre-se</a>
           </form>
         </div>
       ) : (

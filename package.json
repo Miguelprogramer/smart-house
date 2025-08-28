@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "express": "^5.1.0",
+    "mqtt": "^5.14.0",
+    "react-router-dom": "^7.8.2",
+    "socket.io": "^4.8.1"
+  },
+  "name": "smart-house",
+  "version": "1.0.0",
+  "description": "No caso do VITE, entra no site deles, lá vai ter como ativar o react",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Miguelprogramer/smart-house.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Miguelprogramer/smart-house/issues"
+  },
+  "homepage": "https://github.com/Miguelprogramer/smart-house#readme"
+}
