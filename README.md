@@ -1,3 +1,8 @@
-Ligar react: "npm run dev"
+# Instruções para Rodar o Projeto
 
-agora sobre o banco de dados, basta escrever isso "json-server --watch db.json" na pasta aonde ta o "db.json"
+## 1. Rodando o React
+Para iniciar a aplicação React, execute o seguinte comando na raiz do projeto:
+
+```bash
+npm run dev
+json-server --watch db.json
