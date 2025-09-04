@@ -11,10 +11,13 @@ function DashBoard() {
     <>
       <div className="dashboard">
         <div className="Usuario">
-          <h1 className="donoCasa">Casa de João</h1>
-          <img className="fotoUsuario" src={userImage} alt="Foto do Usuário" />
+          <div className="userflex">
+            <h1 className="donoCasa">Casa do(a) Vitin</h1>
+            <img className="fotoUsuario" src={userImage} alt="Foto do Usuário" />
+          </div>
+           <p>Comodos:</p>
         </div>
-        <p class="tituloComodos">Cômodos:</p>
+        
         <div className="comodos">
           <button className="comodo sala">
             <img src={tvImage} alt="Sala" />

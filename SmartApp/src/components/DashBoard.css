@@ -14,10 +14,9 @@
     align-items: center;
 }
 
-  .Usuario {
+  .userflex {
     display: flex;
-    justify-content: space-between; 
-    align-items: center; 
+    gap: 60px;
     width: 100%; 
     margin-bottom: 20px;
 }

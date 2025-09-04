@@ -1,20 +1,21 @@
 import React, { useState } from "react";
 import "./Login.css";
-import DashBoard from "./Dashboard";
+import DashBoard from "./DashBoard";
 import Cadastro from "./Cadastro";
 import painelImg from "../assets/painel.png";
 
 function Login() {
   const [mostrarCadastro, setMostrarCadastro] = useState(false);
-  const [logado, setLogado] = useState(false); // Estado para controlar se o usuário está logado
+  const [logado, setLogado] = useState(false);
+  const [mensagem, setMensagem] = useState(""); // estado da mensagem
 
   async function handleLogin(event) {
-    event.preventDefault(); // Evita o reload da página
+    event.preventDefault();
     const usuario = document.getElementById("usuario").value.trim();
     const senha = document.getElementById("senha").value.trim();
 
     if (!usuario || !senha) {
-      alert("Preencha todos os campos!");
+      setMensagem("Preencha todos os campos!");
       return;
     }
 
@@ -26,18 +27,16 @@ function Login() {
       );
 
       if (user) {
-        // Login bem-sucedido, altera o estado para mostrar o Dashboard
         setLogado(true);
       } else {
-        alert("Usuário ou senha incorretos!");
+        setMensagem("Usuário ou senha incorretos!");
       }
     } catch (error) {
       console.error("Erro ao buscar usuários:", error);
-      alert("Erro ao conectar com o servidor. Tente novamente.");
+      setMensagem("Erro ao conectar com o servidor. Tente novamente.");
     }
   }
 
-  // Se estiver logado, renderiza o Dashboard
   if (logado) {
     return <DashBoard />;
   }
@@ -74,6 +73,9 @@ function Login() {
               Cadastre-se
             </a>
           </form>
+
+          {/* Mostra a mensagem de erro/aviso */}
+          {mensagem && <p className="mensagem-erro">{mensagem}</p>}
         </div>
       ) : (
         <Cadastro />
