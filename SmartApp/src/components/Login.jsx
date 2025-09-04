@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import "./Login.css";
+import DashBoard from "./Dashboard";
 import Cadastro from "./Cadastro";
 import painelImg from "../assets/painel.png";
 
 function Login() {
   const [mostrarCadastro, setMostrarCadastro] = useState(false);
+  const [logado, setLogado] = useState(false); // Estado para controlar se o usuário está logado
 
   async function handleLogin(event) {
     event.preventDefault(); // Evita o reload da página
@@ -24,8 +26,8 @@ function Login() {
       );
 
       if (user) {
-        // Login bem-sucedido, redireciona para o Dashboard
-        window.location.href = "/Dashboard";
+        // Login bem-sucedido, altera o estado para mostrar o Dashboard
+        setLogado(true);
       } else {
         alert("Usuário ou senha incorretos!");
       }
@@ -33,6 +35,11 @@ function Login() {
       console.error("Erro ao buscar usuários:", error);
       alert("Erro ao conectar com o servidor. Tente novamente.");
     }
+  }
+
+  // Se estiver logado, renderiza o Dashboard
+  if (logado) {
+    return <DashBoard />;
   }
 
   return (
@@ -47,7 +54,7 @@ function Login() {
           <form className="LoginForm" onSubmit={handleLogin}>
             <input
               id="usuario"
-              type="email" // Alterado para type="email" para melhor semântica
+              type="email"
               placeholder="usuário@email.com"
               className="email"
             />
@@ -55,13 +62,17 @@ function Login() {
               id="senha"
               type="password"
               placeholder="Senha..."
-              className="senha"/>
-
-              
+              className="senha"
+            />
             <button type="submit">Entrar</button>
             <br />
-            
-            <a type="button" className="cadastro" onClick={() => setMostrarCadastro(true)}>Cadastre-se</a>
+            <a
+              type="button"
+              className="cadastro"
+              onClick={() => setMostrarCadastro(true)}
+            >
+              Cadastre-se
+            </a>
           </form>
         </div>
       ) : (

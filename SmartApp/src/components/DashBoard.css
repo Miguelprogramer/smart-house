@@ -1,23 +1,31 @@
 @media screen and (max-width: 500px) {
+
   .dashboard {
-    width: 100%;
+    position: fixed;  
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background-color: #ff7700;
     padding: 20px;
     box-sizing: border-box;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
+}
 
   .Usuario {
     display: flex;
-    align-items: center;
+    justify-content: space-between; 
+    align-items: center; 
+    width: 100%; 
     margin-bottom: 20px;
-  }
+}
+
 
   .donoCasa {
-    font-size: 24px;
+    font-weight: 600;
+    font-size: 32px;
     color: white;
     margin-right: 10px;
   }
@@ -29,18 +37,20 @@
   }
 
   .comodos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-  }
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); 
+    gap: 14px; 
+    width: 100%;
+    justify-items: center; 
+}
+
 
   .comodo {
-    width: 80px;
-    height: 80px;
-    background-color: #333;
+    width: 130px;
+    height: 122px;
+    background-color: #001f21;
     border: none;
-    border-radius: 10px;
+    border-radius: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -48,15 +58,31 @@
     cursor: pointer;
     color: white;
     font-size: 14px;
+    transition: transform 0.2s ease;
   }
 
+  .comodo:hover {
+    transform: scale(1.05); 
+  }
+
+  
+
   .comodo img {
-    width: 40px;
-    height: 40px;
+    width: 83px;
+    height: 74px;
     margin-bottom: 5px;
   }
 
   .adicionar {
     background-color: #333;
   }
+
+  .tituloComodos {
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  margin: 10px 0; 
 }
+
+}
+

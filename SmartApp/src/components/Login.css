@@ -4,8 +4,9 @@
     padding: 0;
     box-sizing: border-box;
 }
-body{
+body {
     background: linear-gradient(to bottom, #FF7700, #d1d1d1);
+
 }
 
 /* Media screen para celular   */

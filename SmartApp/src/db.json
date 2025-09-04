@@ -6,6 +6,13 @@
       "fone": "14991580340",
       "email": "admin@gmail.com",
       "senha": "1234"
+    },
+    {
+      "id": "33da",
+      "nome": "Miguel",
+      "fone": "(14) 99158-0340",
+      "email": "miguelanimafast01234567@gmail.com",
+      "senha": "1234"
     }
   ]
 }
