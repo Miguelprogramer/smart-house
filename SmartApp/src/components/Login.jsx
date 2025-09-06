@@ -7,7 +7,8 @@ import painelImg from "../assets/painel.png";
 function Login() {
   const [mostrarCadastro, setMostrarCadastro] = useState(false);
   const [logado, setLogado] = useState(false);
-  const [mensagem, setMensagem] = useState(""); // estado da mensagem
+  const [mensagem, setMensagem] = useState(""); 
+  const [usuarioLogado, setUsuarioLogado] = useState(""); // 👈 novo estado para o nome
 
   async function handleLogin(event) {
     event.preventDefault();
@@ -27,6 +28,7 @@ function Login() {
       );
 
       if (user) {
+        setUsuarioLogado(user.nome); // 👈 pega o nome do usuário
         setLogado(true);
       } else {
         setMensagem("Usuário ou senha incorretos!");
@@ -38,7 +40,7 @@ function Login() {
   }
 
   if (logado) {
-    return <DashBoard />;
+    return <DashBoard usuario={usuarioLogado} />; // 👈 passa como prop
   }
 
   return (
@@ -74,7 +76,6 @@ function Login() {
             </a>
           </form>
 
-          {/* Mostra a mensagem de erro/aviso */}
           {mensagem && <p className="mensagem-erro">{mensagem}</p>}
         </div>
       ) : (

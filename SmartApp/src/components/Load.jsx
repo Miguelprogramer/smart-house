@@ -1,23 +1,27 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./Load.css";
+import Login from "./Login"; // igual o Login importa o DashBoard
+import logo from "../assets/logo.png";
 
 function LoadScreen() {
-  const navigate = useNavigate();
+  const [mostrarLogin, setMostrarLogin] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      navigate("/login"); // Redireciona para login após 2 segundos
+      setMostrarLogin(true); // depois de 5s, troca pra tela de login
     }, 5000);
 
     return () => clearTimeout(timer);
-  }, [navigate]);
+  }, []);
+
+  if (mostrarLogin) {
+    return <Login />; // 👈 mesma lógica do Login.jsx (troca componente)
+  }
 
   return (
-    <>    
-        <div className="load-screen">
-        <img src="../assets/logo.png" alt="SmartHome Logo" className="logo"/>
-        </div>
-    </>
+    <div className="load-screen">
+      <img src={logo} alt="SmartHome Logo" className="logo" />
+    </div>
   );
 }
 

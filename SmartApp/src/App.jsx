@@ -2,10 +2,11 @@ import './App.css';
 import Login from './components/Login.jsx';
 import Cadastro from './components/Cadastro.jsx';
 import DashBoard from './components/DashBoard.jsx';
+import Load from './components/Load.jsx';
 function App() {
   return (
   <>
-  <Login/>
+  <Load/>
   </>    
   );
 }
